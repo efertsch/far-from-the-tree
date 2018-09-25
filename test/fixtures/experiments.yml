@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sample: one
+  test: one
+  date: 2018-09-25
+  value: 1
+  notes: MyText
+
+two:
+  sample: two
+  test: two
+  date: 2018-09-25
+  value: 1
+  notes: MyText

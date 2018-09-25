@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  yeast_type: MyString
+  lees?: false
+  round: 1
+
+two:
+  yeast_type: MyString
+  lees?: false
+  round: 1
