@@ -5,4 +5,5 @@ class Sample < ApplicationRecord
   belongs_to :stage
   has_many :experiments
   has_many :appointments
+  has_many :additions
 end

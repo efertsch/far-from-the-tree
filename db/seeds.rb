@@ -36,7 +36,7 @@ end
 
 # Users have a name, email, password
 users = [
-  ["Ethan F.", "efertsch@gmail.com", "password"]
+  ["Ethan F.", "ecfertsch@gmail.com", "password"]
 ]
 
 users.each do |user|
@@ -81,7 +81,6 @@ samples = [
   [Date.new(2018, 9, 1), nil, 275, 1, 1, 1, 2],
   [Date.new(2018, 9, 1), nil, 275, 1, 1, 1, 2],
   [Date.new(2018, 9, 1), nil, 275, 1, 1, 1, 2],
-
   [Date.new(2018, 11, 1), nil, 275, 2, 2, 1, 1],
   [Date.new(2018, 11, 1), nil, 275, 2, 2, 1, 1],
   [Date.new(2018, 11, 1), nil, 275, 2, 2, 1, 1],
@@ -90,18 +89,6 @@ samples = [
 
 samples.each do |sample|
   Sample.create!(start_date: sample[0], finish_date: sample[1], tote_size: sample[2], batch_id: sample[3], group_id: sample[4], stage_id: sample[5], pitch_id: sample[5])
-end
-
-# Additions have a chemical_name, amount, notes, unit, date, sample_id
-additions = [
-  ["PMS", "260" "g", Date.new(2018, 9, 1), "Initial SO2 dose", 5],
-  ["PMS", "260" "g", Date.new(2018, 9, 1), "Initial SO2 dose", 6],
-  ["PMS", "260" "g", Date.new(2018, 9, 1), "Initial SO2 dose", 7],
-  ["PMS", "260" "g", Date.new(2018, 9, 1), "Initial SO2 dose", 8]
-]
-
-additions.each do |addition|
-  Addition.create!(chemical_name: addition[0], amount: addition[1], unit: addition[2], date: addition[3], notes: addition[4], sample_id: addition[5])
 end
 
 # Experiments have a date, value, test_id, sample_id, notes
@@ -116,16 +103,28 @@ experiments.each do |experiment|
   Experiment.create!(date: experiment[0], value: experiment[1], test_id: experiment[2], sample_id: experiment[3], notes: experiment[4])
 end
 
+# Additions have a chemical_name, amount, notes, unit, date, sample_id
+additions = [
+  ["PMS", "260", "g", Date.new(2018, 9, 1), "Initial SO2 dose", 1],
+  ["PMS", "260", "g", Date.new(2018, 9, 1), "Initial SO2 dose", 2],
+  ["PMS", "260", "g", Date.new(2018, 9, 1), "Initial SO2 dose", 3],
+  ["PMS", "260", "g", Date.new(2018, 9, 1), "Initial SO2 dose", 4]
+]
+
+additions.each do |addition|
+  Addition.create!(chemical_name: addition[0], amount: addition[1], unit: addition[2], date: addition[3], notes: addition[4], sample_id: addition[5])
+end
+
 # Appointments have a date, test_id, sample_id, description
 appointments = [
   [Date.new(2018, 9, 7), 1, 1, "Incoming juice pH"],
   [Date.new(2018, 9, 14), 1, 2, "Incoming juice pH"],
   [Date.new(2018, 9, 28), 1, 3, "Incoming juice pH"],
   [Date.new(2018, 10, 2), 1, 4, "Incoming juice pH"],
-  [Date.new(2018, 11, 7), 1, 4, "Incoming juice pH"],
-  [Date.new(2018, 11, 14), 1, 5, "Incoming juice pH"],
-  [Date.new(2018, 11, 28), 1, 6, "Incoming juice pH"],
-  [Date.new(2018, 12, 5), 1, 7, "Incoming juice pH"]
+  [Date.new(2018, 11, 7), 1, 5, "Incoming juice pH"],
+  [Date.new(2018, 11, 14), 1, 6, "Incoming juice pH"],
+  [Date.new(2018, 11, 28), 1, 7, "Incoming juice pH"],
+  [Date.new(2018, 12, 5), 1, 8, "Incoming juice pH"]
 ]
 
 appointments.each do |appointment|
