@@ -21,6 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'bootstrap', '~> 4.1.3'
 
+gem "font-awesome-rails"
+
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'rails-ujs', '~> 0.1.0'
