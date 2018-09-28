@@ -1,0 +1,14 @@
+.navbar {
+  height: 15vh;
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-link,
+      .fftt-nav-link {
+        color: white;
+        .active {
+          color: red;
+        }
+      }
+    }
+  }
+}
