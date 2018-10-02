@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     if @user.save
+      session[:user_id] = @user.id
       redirect_to root_url, notice: 'Thank you for registering!'
     else
       render :new
@@ -15,6 +16,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password_digest)
+    params.require(:user).permit(:email, :password_digest, :password_confirmation)
   end
 end

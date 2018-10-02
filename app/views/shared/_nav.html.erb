@@ -8,8 +8,12 @@
       <a class="nav-item nav-link fftt-nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link fftt-nav-link" href="#">View Data</a>
       <a class="nav-item nav-link fftt-nav-link" href="#">Record Data</a>
-      <a class="nav-item nav-link fftt-nav-link" href="#">Login</a>
-      <a class="nav-item nav-link fftt-nav-link" href="#">Logout</a>
+      <% if current_user %>
+        <%= link_to 'Logout', logout_path, class: "nav-item nav-link fftt-nav-link" %>
+      <% else %>
+        <%= link_to "Register", registration_path, class: "nav-item nav-link fftt-nav-link" %>
+        <%= link_to "Log In", login_path, class: "nav-item nav-link fftt-nav-link" %>
+      <% end %>
     </div>
   </div>
 </nav>
