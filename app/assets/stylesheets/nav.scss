@@ -1,0 +1,26 @@
+$accent: #F05223;
+$theme-dark: #231F20;
+
+.navbar {
+  height: 15vh;
+  .navbar-brand{
+    .nav-logo {
+      height: 75px;
+      width: 75px;
+    }
+  }
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-link,
+      .fftt-nav-link {
+        color: white;
+        &:hover{
+          color: gray;
+        }
+        &.active {
+          color: $accent;
+        }
+      }
+    }
+  }
+}
