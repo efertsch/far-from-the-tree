@@ -5,6 +5,9 @@
 $accent: #F05223;
 
 .all-samples {
+  h2 {
+    font-size: 1rem;
+  }
   .card {
     &:hover,
     &:focus {
@@ -17,6 +20,36 @@ $accent: #F05223;
     }
     .action-link {
       color: $accent;
+    }
+  }
+}
+
+.action-row {
+  .action-button {
+    background-color: $accent;
+    border: 1px solid $accent;
+    &:hover {
+      background-color: $accent;
+      border: 1px solid $accent;
+    }
+  }
+}
+
+.new-sample {
+  height: 100vh;
+  p{
+    font-size: 0.8rem;
+    .asterisk {
+      color: $accent;
+    }
+  }
+
+  .action-button {
+    background-color: $accent;
+    border: 1px solid $accent;
+    &:hover {
+      background-color: $accent;
+      border: 1px solid $accent;
     }
   }
 }

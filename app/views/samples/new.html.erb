@@ -1,0 +1,50 @@
+<header>
+  <%=render 'shared/nav'%>
+</header>
+
+<main role="main">
+  <section class="new-sample d-flex align-items-center">
+    <div class="container w-50">
+      <h1 class="new-sample-title text-center">Add a Sample</h1>
+      <p class="text-muted text-center"><span class="asterisk">**</span>Please note that a batch and a group must exist before a sample can be created</p>
+      <div class="row justify-content-center">
+        <div class="col">
+          <%= form_for @sample, url: samples_path do |f| %>
+
+            <div class="form-group">
+              <%= f.label :start_date %><br />
+              <%= f.date_select :start_date, class: "form-control"%>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :tote_size %><br />
+              <%= f.text_field :tote_size, class: "form-control", 'aria-describedby': "toteSizeHelp", placeholder:"Enter tote size" %>
+              <small id="toteSizeHelp" class="form-text text-muted">Enter tote size as an integer without units</small>
+            </div>
+
+
+
+
+            <div class="form-group">
+              <%= f.label :pitch %><br />
+              <%= f.select :pitch_id, Pitch.order(:yeast_type).collect { |p| [ p.yeast_type, p.id ] }, include_blank: true%>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :batch %><br />
+              <%= f.select :batch_id, Batch.order(:date_received).collect { |b| [ b.date_received, b.id ] }, include_blank: true%>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :group %><br />
+              <%= f.select :group_id, Group.order(:name).collect { |g| [ g.name, g.id ] }, include_blank: true%>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary action-button">Create Sample</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
