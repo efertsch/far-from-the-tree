@@ -1,0 +1,36 @@
+<header>
+  <%=render 'shared/nav'%>
+</header>
+
+<main role="main">
+  <section class="new-shipment d-flex align-items-center">
+    <div class="container w-75 mb-4">
+      <h1 class="new-shipment-title text-center mt-4 mb-2">Add a Juice Shipment</h1>
+      <div class="row justify-content-center">
+        <div class="col">
+          <%= form_for @juice_shipment, url: juice_shipments_path do |f| %>
+
+            <div class="form-group">
+              <%= f.label :date_received %><br />
+              <%= f.date_select :date_received, class: "form-control"%>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :apple_composition %><br />
+              <%= f.text_field :apple_composition, class: "form-control", 'aria-describedby': "appleCompHelp", placeholder:"Enter the apple composition" %>
+              <small id="appleCompHelp" class="form-text text-muted">Enter the different types of apples present in the juice</small>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :specific_gravity %><br />
+              <%= f.text_field :specific_gravity, class: "form-control", 'aria-describedby': "gravityHelp", placeholder:"Enter the specific gravity"%>
+              <small id="gravityHelp" class="form-text text-muted">Enter the specific gravity as a decimal value</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary action-button">Create Shipment</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
