@@ -1,59 +1,47 @@
+<header>
+  <%= render 'shared/nav'%>
+</header>
 
-<%= render 'shared/nav'%>
-
-<main class="container-fluid home-page">
-
-  <section class="row app-intro">
-    <div class="overlay">
-    </div>
-    <div class="col-xs-12 d-flex align-items-center" style="height: 100%;">
-      <header>
-          <h1 class="text-center app-intro-text app-intro-text-lg"> Core.io </h1>
-          <h2 class="text-center app-intro-text"> A tool for the collection, management, and analysis of cellar data</h2>
-      </header>
+<main role="main" class="home-page">
+  <section class="jumbotron text-center">
+    <!-- <div class="overlay">
+    </div> -->
+    <div class="container">
+      <h1 class="app-intro-text app-intro-text-lg">Core.io</h1>
+      <p class="app-intro-text">A tool for the collection, management, and analysis of cellar data</p>
     </div>
   </section>
 
-  <section class="row app-options justify-content-center">
-
-    <header class="row">
-      <div class="col-xs-12">
-      </div>
-    </header>
-
-    <div class="row jusitfy-content-between">
-
-      <div class="col-xs-12 col-md-4 mt-2">
-        <div class="app-options-container d-flex flex-column align-tems-center justify-content-center">
-          <%= fa_icon "edit 2x", class: "app-options-icon text-center" %>
-          <h2 class="app-options-header text-center">Record Data</h2>
-          <p class="app-options-desc text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros felis, volutpat quis condimentum sit amet, gravida fermentum nunc. Donec.</p>
+  <section class="app-features">
+    <div class="container">
+      <h1 class="text-center">Explore Core.io</h1>
+      <div class="row">
+        <div class="col-xs-12 col-md-4 mt-2">
+          <div class="app-feature d-flex flex-column align-tems-center justify-content-center">
+            <%= fa_icon "edit 2x", class: "app-options-icon text-center" %>
+            <h2 class="app-options-header text-center">Record Data</h2>
+            <p class="app-options-desc text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros felis, volutpat quis condimentum sit amet, gravida fermentum nunc. Donec.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 mt-2">
+          <div class="app-feature d-flex flex-column align-tems-center justify-content-center">
+            <%= fa_icon "database 2x", class: "app-options-icon text-center"%>
+            <h2 class="app-options-header text-center">Perform Analysis</h2>
+            <p class="app-options-desc text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros felis, volutpat quis condimentum sit amet, gravida fermentum nunc. Donec.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 mt-2">
+          <div class="app-feature d-flex flex-column align-tems-center justify-content-center">
+            <%= fa_icon "flask 2x", class: "app-options-icon text-center"%>
+            <h2 class="app-options-header text-center">Schedule Experiments</h2>
+            <p class="app-options-desc text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros felis, volutpat quis condimentum sit amet, gravida fermentum nunc. Donec.</p>
+          </div>
         </div>
       </div>
-
-      <div class="col-xs-12 col-md-4 mt-2">
-        <div class="app-options-container d-flex flex-column align-tems-center justify-content-center">
-          <%= fa_icon "database 2x", class: "app-options-icon text-center"%>
-          <h2 class="app-options-header text-center">View Analysis</h2>
-          <p class="app-options-desc text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros felis, volutpat quis condimentum sit amet, gravida fermentum nunc. Donec.</p>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-md-4 mt-2">
-        <div class="app-options-container d-flex flex-column align-tems-center justify-content-center">
-          <%= fa_icon "flask 2x", class: "app-options-icon text-center"%>
-          <h2 class="app-options-header text-center">Schedule Experiments</h2>
-          <p class="app-options-desc text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros felis, volutpat quis condimentum sit amet, gravida fermentum nunc. Donec.</p>
-        </div>
-      </div>
-
     </div>
-
   </section>
-
 </main>
 
 <!-- Add hoverable sticky footer? -->
 <!-- Add media queries -->
-<!-- Overflow of container? -->
 <!-- Collapsed nav not working, popper.js? -->

@@ -7,33 +7,28 @@ $white: #FFFFFF;
 
 
 .home-page {
-  .app-intro {
-    height: 60vh;
-    width: 100vw;
+  .jumbotron {
+    height: 55vh;
     background-image: url("apples-min.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &-text {
+    .app-intro-text {
       color: $white;
       &-lg{
         font-size: 4rem;
       }
     }
-    .overlay {
-      background-color: rgba(gray, 0.3);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+    // .overlay {
+    //   background-color: rgba(gray, 0.3);
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    // }
   }
-  .app-options {
+  .app-features {
     padding-top: 4em;
     padding-bottom: 4em;
     margin-bottom: 8em;
@@ -42,7 +37,7 @@ $white: #FFFFFF;
     &-title {
       font-size: 2rem;
     }
-    .app-options-container {
+    .app-feature {
       padding: 1em;
       .app-options-icon{
         color: $accent;
