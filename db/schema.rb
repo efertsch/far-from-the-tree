@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181003181318) do
+ActiveRecord::Schema.define(version: 20181003191123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "additions", force: :cascade do |t|
     t.string "chemical_name"
-    t.integer "amount"
-    t.string "unit"
+    t.string "amount"
     t.date "date"
     t.bigint "sample_id"
     t.datetime "created_at", null: false
@@ -28,10 +27,10 @@ ActiveRecord::Schema.define(version: 20181003181318) do
   end
 
   create_table "appointments", force: :cascade do |t|
-    t.string "description"
     t.date "date"
     t.bigint "test_id"
     t.bigint "sample_id"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sample_id"], name: "index_appointments_on_sample_id"
@@ -39,10 +38,10 @@ ActiveRecord::Schema.define(version: 20181003181318) do
   end
 
   create_table "experiments", force: :cascade do |t|
-    t.bigint "sample_id"
-    t.bigint "test_id"
     t.date "date"
-    t.integer "value"
+    t.string "result"
+    t.bigint "test_id"
+    t.bigint "sample_id"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,23 +52,23 @@ ActiveRecord::Schema.define(version: 20181003181318) do
   create_table "juice_shipments", force: :cascade do |t|
     t.date "date_received"
     t.string "apple_composition"
+    t.decimal "specific_gravity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "specific_gravity"
   end
 
   create_table "samples", force: :cascade do |t|
     t.date "start_date"
     t.date "finish_date"
     t.integer "tote_size"
-    t.bigint "batch_id"
+    t.string "yeast_type"
+    t.integer "round"
+    t.bigint "juice_shipment_id"
     t.bigint "stage_id"
+    t.string "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "round"
-    t.string "yeast_type"
-    t.string "group"
-    t.index ["batch_id"], name: "index_samples_on_batch_id"
+    t.index ["juice_shipment_id"], name: "index_samples_on_juice_shipment_id"
     t.index ["stage_id"], name: "index_samples_on_stage_id"
   end
 
@@ -82,10 +81,10 @@ ActiveRecord::Schema.define(version: 20181003181318) do
 
   create_table "tests", force: :cascade do |t|
     t.string "name"
-    t.string "unit"
+    t.string "units"
+    t.string "abbreviation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "abbreviation"
   end
 
   create_table "users", force: :cascade do |t|
@@ -101,6 +100,6 @@ ActiveRecord::Schema.define(version: 20181003181318) do
   add_foreign_key "appointments", "tests"
   add_foreign_key "experiments", "samples"
   add_foreign_key "experiments", "tests"
-  add_foreign_key "samples", "juice_shipments", column: "batch_id"
+  add_foreign_key "samples", "juice_shipments"
   add_foreign_key "samples", "stages"
 end

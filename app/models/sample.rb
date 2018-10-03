@@ -1,9 +1,6 @@
 class Sample < ApplicationRecord
-  belongs_to :batch
-  belongs_to :group
-  belongs_to :pitch
+  belongs_to :juice_shipment
   belongs_to :stage
-  has_many :experiments
-  has_many :appointments
   has_many :additions
+  has_many :experiments
 end

@@ -2,14 +2,12 @@
 
 one:
   chemical_name: MyString
-  amount: 1
-  unit: MyString
-  date: 2018-09-25
+  amount: MyString
+  date: 2018-10-03
   sample: one
 
 two:
   chemical_name: MyString
-  amount: 1
-  unit: MyString
-  date: 2018-09-25
+  amount: MyString
+  date: 2018-10-03
   sample: two

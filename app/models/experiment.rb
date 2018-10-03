@@ -1,4 +1,4 @@
 class Experiment < ApplicationRecord
-  belongs_to :sample
   belongs_to :test
+  belongs_to :sample, optional: true
 end
