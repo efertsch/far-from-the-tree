@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180925203136) do
+ActiveRecord::Schema.define(version: 20181003181318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,13 +38,6 @@ ActiveRecord::Schema.define(version: 20180925203136) do
     t.index ["test_id"], name: "index_appointments_on_test_id"
   end
 
-  create_table "batches", force: :cascade do |t|
-    t.date "date_received"
-    t.string "apple_composition"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "experiments", force: :cascade do |t|
     t.bigint "sample_id"
     t.bigint "test_id"
@@ -57,18 +50,12 @@ ActiveRecord::Schema.define(version: 20180925203136) do
     t.index ["test_id"], name: "index_experiments_on_test_id"
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.string "name"
+  create_table "juice_shipments", force: :cascade do |t|
+    t.date "date_received"
+    t.string "apple_composition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "pitches", force: :cascade do |t|
-    t.string "yeast_type"
-    t.boolean "lees?"
-    t.integer "round"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal "specific_gravity"
   end
 
   create_table "samples", force: :cascade do |t|
@@ -76,14 +63,13 @@ ActiveRecord::Schema.define(version: 20180925203136) do
     t.date "finish_date"
     t.integer "tote_size"
     t.bigint "batch_id"
-    t.bigint "group_id"
-    t.bigint "pitch_id"
     t.bigint "stage_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "round"
+    t.string "yeast_type"
+    t.string "group"
     t.index ["batch_id"], name: "index_samples_on_batch_id"
-    t.index ["group_id"], name: "index_samples_on_group_id"
-    t.index ["pitch_id"], name: "index_samples_on_pitch_id"
     t.index ["stage_id"], name: "index_samples_on_stage_id"
   end
 
@@ -115,8 +101,6 @@ ActiveRecord::Schema.define(version: 20180925203136) do
   add_foreign_key "appointments", "tests"
   add_foreign_key "experiments", "samples"
   add_foreign_key "experiments", "tests"
-  add_foreign_key "samples", "batches"
-  add_foreign_key "samples", "groups"
-  add_foreign_key "samples", "pitches"
+  add_foreign_key "samples", "juice_shipments", column: "batch_id"
   add_foreign_key "samples", "stages"
 end
