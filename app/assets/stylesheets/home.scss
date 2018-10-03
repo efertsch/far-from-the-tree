@@ -4,11 +4,8 @@
 $accent: #F05223;
 $white: #FFFFFF;
 
-
-
 .home-page {
   .jumbotron {
-    height: 55vh;
     background-image: url("apples-min.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -45,6 +42,13 @@ $white: #FFFFFF;
       }
       .app-options-header{
         font-size: 1rem;
+      }
+      .action-button {
+        background-color: $accent;
+        border: 1px solid $accent;
+        &:hover {
+          background-color: $accent;
+        }
       }
     }
   }
