@@ -8,9 +8,9 @@ $accent: #F05223;
 //   background: linear-gradient(to top, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 // }
 .login {
-  height: 100%;
-  .login-form-container {
-    width: 75vw;
+  height: 100vh;
+  // display: flex;
+  // align-items: center;
     .action-button {
       background-color: $accent;
       border: 1px solid $accent;
@@ -18,5 +18,4 @@ $accent: #F05223;
         background-color: $accent;
       }
     }
-  }
 }
