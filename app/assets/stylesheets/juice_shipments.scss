@@ -1,3 +1,15 @@
 // Place all the styles related to the juice_shipments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$accent: #F05223;
+
+.new-shipment {
+  .action-button {
+    background-color: $accent;
+    border: 1px solid $accent;
+    &:hover {
+      background-color: $accent;
+      border: 1px solid $accent;
+    }
+  }
+}

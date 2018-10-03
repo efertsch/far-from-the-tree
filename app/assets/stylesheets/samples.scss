@@ -15,6 +15,9 @@ $accent: #F05223;
     }
   }
   .card-body {
+    .card-title {
+      border-bottom: 1px solid $accent;
+    }
     .card-text {
       font-size: 0.875rem;
     }
