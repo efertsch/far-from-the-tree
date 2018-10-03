@@ -4,15 +4,12 @@
 $accent: #F05223;
 
 .registration {
-  height: 100%;
-  .registration-form-container {
-    width: 75vw;
-    .action-button {
+  height: 100vh;
+  .action-button {
+    background-color: $accent;
+    border: 1px solid $accent;
+    &:hover {
       background-color: $accent;
-      border: 1px solid $accent;
-      &:hover {
-        background-color: $accent;
-      }
     }
   }
 }

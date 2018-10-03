@@ -9,13 +9,11 @@ $accent: #F05223;
 // }
 .login {
   height: 100vh;
-  // display: flex;
-  // align-items: center;
-    .action-button {
+  .action-button {
+    background-color: $accent;
+    border: 1px solid $accent;
+    &:hover {
       background-color: $accent;
-      border: 1px solid $accent;
-      &:hover {
-        background-color: $accent;
-      }
     }
+  }
 }
