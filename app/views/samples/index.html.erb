@@ -1,0 +1,27 @@
+<header>
+  <%= render 'shared/nav'%>
+</header>
+
+<main role="main">
+
+  <section class="all-samples">
+    <div class="container">
+      <h1 class="text-center mt-4 mb-4">Samples</h1>
+        <div class="row mb-4">
+          <%@samples.each do |sample|%>
+            <div class="col-xs-12 col-md-3" style="min-width:15rem;">
+              <div class="card mt-2 mb-2">
+                <div class="card-body">
+                  <h5 class="card-title">Sample #<%=sample.id%></h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Sample Group #<%=sample.group.id%></h6>
+                  <p class="card-text">Stage:</br> <%=sample.stage.description.capitalize%></p>
+                  <p class="card-text">Last Modified:</br> <%=format_last_modified(sample)%></p>
+                  <%=link_to "More Details", sample_path(sample.id), class:"card-link action-link"%>
+                </div>
+              </div>
+            </div>
+          <%end%>
+        </div>
+    </div>
+  </section>
+</main>

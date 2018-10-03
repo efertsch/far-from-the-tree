@@ -6,7 +6,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link fftt-nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link fftt-nav-link" href="#">View Data</a>
+      <%= link_to 'View Data', samples_path, class: "nav-item nav-link fftt-nav-link" %>
+
+      <!-- <a class="nav-item nav-link fftt-nav-link" href="#">View Data</a> -->
       <a class="nav-item nav-link fftt-nav-link" href="#">Record Data</a>
       <% if current_user %>
         <%= link_to 'Logout', logout_path, class: "nav-item nav-link fftt-nav-link" %>
