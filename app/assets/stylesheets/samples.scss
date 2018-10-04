@@ -27,31 +27,27 @@ $accent: #F05223;
   }
 }
 
-.action-row {
-  .action-button {
-    background-color: $accent;
-    border: 1px solid $accent;
-    &:hover {
-      background-color: $accent;
-      border: 1px solid $accent;
-    }
-  }
-}
-
 .new-sample {
   p{
     font-size: 0.8rem;
     .asterisk {
       color: $accent;
     }
-  }
-
-  .action-button {
-    background-color: $accent;
-    border: 1px solid $accent;
-    &:hover {
+    .action-button {
       background-color: $accent;
       border: 1px solid $accent;
+      &:hover {
+        background-color: $accent;
+        border: 1px solid $accent;
+      }
+    }
+  }
+}
+
+.sample-header {
+  .crud-action {
+    .action-link {
+      color: $accent;
     }
   }
 }
