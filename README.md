@@ -12,8 +12,8 @@ New Sample Page
 
 All Samples Page
 ========
-![All Sample Screenshot](screenshots/sampleindex.png "All Samples Page")
+![All Sample Screenshot](screenshots/samplesindex.png "All Samples Page")
 
 Single Sample Page
 ========
-![Sample Show Screenshots](screenshots/sample#how.png "Sample Show Page")
+![Sample Show Screenshots](screenshots/sampleshow.png "Sample Show Page")
