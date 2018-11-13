@@ -33,14 +33,6 @@ $accent: #F05223;
     .asterisk {
       color: $accent;
     }
-    .action-button {
-      background-color: $accent;
-      border: 1px solid $accent;
-      &:hover {
-        background-color: $accent;
-        border: 1px solid $accent;
-      }
-    }
   }
 }
 
