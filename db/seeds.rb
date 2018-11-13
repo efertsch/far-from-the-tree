@@ -85,10 +85,10 @@ end
 
 # Additions have a chemical_name, amount, notes, unit, date, sample_id
 additions = [
-  ["PMS", "260g", Date.new(2018, 9, 1), "Initial SO2 dose", 1],
-  ["PMS", "260g", Date.new(2018, 9, 1), "Initial SO2 dose", 2],
-  ["PMS", "260g", Date.new(2018, 9, 1), "Initial SO2 dose", 3],
-  ["PMS", "260g", Date.new(2018, 9, 1), "Initial SO2 dose", 4]
+  ["KBMS", "260g", Date.new(2018, 9, 1), "Initial SO2 dose", 1],
+  ["Pectolytic Enzyme", "18g", Date.new(2018, 9, 6), "Heavy pectin", 1],
+  ["KBMS", "260g", Date.new(2018, 9, 1), "Initial SO2 dose", 2],
+  ["KBMS", "260g", Date.new(2018, 10, 30), "Storage SO2 dose, SCOBY formation", 1]
 ]
 
 additions.each do |addition|

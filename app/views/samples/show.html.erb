@@ -8,17 +8,17 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item mt-2">
-                <a class="nav-link" href="#">
+                <a class="nav-link action-link" href="#">
                   Back to All <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link action-link" href="#">
                   Additions
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link action-link" href="#">
                   Experiments
                 </a>
               </li>
@@ -78,15 +78,24 @@
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>ID</th>
+                  <th>Chemical Name</th>
+                  <th>Amount</th>
+                  <th>Date Added</th>
+                  <th>Notes</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <%@sample.additions.each do |addition|%>
+                  <tr>
+                    <td>addition.id</td>
+                    <td>addition.chemical_name</td>
+                    <td>addition.amount</td>
+                    <td>addition.date</td>
+                    <td>addition.notes</td>
+                  </tr>
+                <%end%>
+                <!-- <tr>
                   <td>1,001</td>
                   <td>Lorem</td>
                   <td>ipsum</td>
@@ -197,56 +206,10 @@
                   <td>ligula</td>
                   <td>in</td>
                   <td>libero</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
         </main>
       </div>
     </div>
-
-
-
-<!-- <main role="main">
-  <section class="jumbotron text-center sample-header">
-    <div class="container">
-      <h1 class="sample-name text-center">Sample <span class="id">#<%=@sample.id%></span></h1>
-      <p class="sample-details text-muted">Group: <%=@sample.group%></p>
-      <p class="sample-details text-muted">Start Date: <%=@sample.start_date%></p>
-      <p class="sample-details text-muted">Stage: <%=@sample.stage.description.capitalize%></p>
-      <div class="crud-action d-flex justify-content-center">
-        <div class="mr-4">
-          <%= link_to edit_sample_path(@sample), class:"action-link" do %>
-            <%= fa_icon "pencil 2x"%>
-          <%end%>
-        </div>
-        <div class="ml-4">
-          <%= link_to samples_path, class:"action-link" do %>
-            <%= fa_icon "trash 2x"%>
-          <%end%>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sample-analytics">
-    <div class="container">
-      <h1 class="sample-name text-center">Sample <span class="id">#<%=@sample.id%></span></h1>
-      <p class="sample-details text-muted">Group: <%=@sample.group%></p>
-      <p class="sample-details text-muted">Start Date: <%=@sample.start_date%></p>
-      <p class="sample-details text-muted">Stage: <%=@sample.stage.description.capitalize%></p>
-      <div class="crud-action d-flex justify-content-center">
-        <div class="mr-4">
-          <%= link_to edit_sample_path(@sample), class:"action-link" do %>
-            <%= fa_icon "pencil 2x"%>
-          <%end%>
-        </div>
-        <div class="ml-4">
-          <%= link_to samples_path, class:"action-link" do %>
-            <%= fa_icon "trash 2x"%>
-          <%end%>
-        </div>
-      </div>
-    </div>
-  </section>
-</main> -->
